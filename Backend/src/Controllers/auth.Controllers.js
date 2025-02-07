@@ -29,12 +29,13 @@ export const register = async (req, res) => {
     });
 
     if (newUser) {
-      generateToken(newUser._id, res);
+      const token = generateToken(newUser._id, res);
       await newUser.save();
       res.status(200).json({
         message: "User Registeration Successfull",
         error: false,
         data: newUser,
+        accessToken: token,
       });
     }
   } catch (error) {
