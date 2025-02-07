@@ -1,6 +1,7 @@
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axiosInstance from "./axiosInstance.jsx";
+import Home from "../Pages/Home.jsx";
 
 const ProtectedRoute = () => {
   const [isAuth, setIsAuth] = useState(null);
@@ -22,11 +23,11 @@ const ProtectedRoute = () => {
     checkAuth();
   }, []);
 
-  if (isAuth === null) {
+  if (isAuth === null || false) {
     Navigate("/login");
   }
 
-  return isAuth ? <Outlet /> : Navigate("/login");
+  return isAuth ? <Home /> : Navigate("/login");
 };
 
 export default ProtectedRoute;

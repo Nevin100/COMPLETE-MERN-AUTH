@@ -1,14 +1,16 @@
-// import { Link } from "react-router-dom";
+import LogOut from "./logOut.jsx";
 
 function Navbar() {
   return (
-    <>
-      <div className="">
-        <nav>
-          <ol>{/* <li><Link to={}>Logout</Link></li> */}</ol>
-        </nav>
-      </div>
-    </>
+    <div>
+      <nav className="flex justify-between">
+        <ol>
+          <li>
+            <LogOut />
+          </li>
+        </ol>
+      </nav>
+    </div>
   );
 }
 
